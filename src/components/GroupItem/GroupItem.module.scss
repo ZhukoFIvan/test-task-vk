@@ -1,0 +1,20 @@
+.block {
+	min-width: 500px;
+	background-color: #444444;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #696767;
+}
+.avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.info_block {
+	display: flex;
+	flex-direction: column;
+}
