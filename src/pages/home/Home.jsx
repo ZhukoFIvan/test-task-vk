@@ -35,7 +35,13 @@ const Home = () => {
 	})
 
 	useEffect(() => {
-		dispatch(fetchGroups())
+		setTimeout(() => {
+			try {
+				dispatch(fetchGroups())
+			} catch (error) {
+				console.log(error)
+			}
+		}, 1000)
 	}, [dispatch])
 
 	return (

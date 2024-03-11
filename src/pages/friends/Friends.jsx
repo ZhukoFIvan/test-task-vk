@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchGroups } from '../../store/groupsSlice'
 import styles from './Friends.module.scss'
 const Friends = () => {
@@ -10,15 +10,22 @@ const Friends = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(fetchGroups())
-	}, [])
+		setTimeout(() => {
+			try {
+				dispatch(fetchGroups())
+			} catch (error) {
+				console.log(error)
+			}
+		}, 1000)
+	}, [dispatch])
 	return (
 		<div className={styles.block}>
+			<Link to='/'>Вернуться назад</Link>
 			{groups.map((group) => {
 				{
 					return (
 						group.id == id &&
-						group.friends?.map((f) => {
+						group.friends.map((f) => {
 							return (
 								<div className={styles.name}>
 									{f.first_name + ' ' + f.last_name}
