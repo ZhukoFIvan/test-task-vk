@@ -17,17 +17,17 @@ const Friends = () => {
 				console.log(error)
 			}
 		}, 1000)
-	}, [dispatch])
+	}, [])
 	return (
 		<div className={styles.block}>
 			<Link to='/'>Вернуться назад</Link>
-			{groups.map((group) => {
+			{groups?.map((group) => {
 				{
 					return (
 						group.id == id &&
-						group.friends.map((f) => {
+						group.friends?.map((f, index) => {
 							return (
-								<div className={styles.name}>
+								<div key={index} className={styles.name}>
 									{f.first_name + ' ' + f.last_name}
 								</div>
 							)

@@ -42,7 +42,7 @@ const Home = () => {
 				console.log(error)
 			}
 		}, 1000)
-	}, [dispatch])
+	}, [])
 
 	return (
 		<>
@@ -60,7 +60,7 @@ const Home = () => {
 			{
 				<ul className={styles.groups}>
 					{filteredGroups.map((group) => {
-						return <GroupItem {...group} />
+						return <GroupItem key={group.id} {...group} />
 					})}
 				</ul>
 			}
