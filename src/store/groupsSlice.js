@@ -4,7 +4,7 @@ import axios from 'axios'
 export const fetchGroups = createAsyncThunk(
 	'groups/fetchGroups',
 	async function () {
-		const response = await axios.get('/groups.json')
+		const response = await axios.get('../groups.json')
 		return response.data
 	}
 )
